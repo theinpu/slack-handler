@@ -78,7 +78,7 @@ class SlackWebHookHandler extends AbstractProcessingHandler {
         $attachment = [
             "fallback"  => $record['formatted'],
             "color"     => $this->colorSchema[$record['level']],
-            "title"     => $record['channel'],
+            "title"     => "{$record['channel']}: {$record['level_name']}",
             "text"      => $record['message'],
             "mrkdwn_in" => ["text"]
         ];
